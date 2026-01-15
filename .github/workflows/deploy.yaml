@@ -18,4 +18,5 @@ jobs:
 
       - name: Health check
         run: |
-          curl -f http://localhost:4000/health
+          curl -f http://localhost:4000/api/health
+          curl -f http://localhost:80/
