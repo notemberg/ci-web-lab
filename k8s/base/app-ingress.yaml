@@ -8,10 +8,10 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: app.yourdomain.com
+    - host: node1.thinapat.work
       http:
         paths:
-          - path: /
+          - path: /(.*)
             pathType: Prefix
             backend:
               service:
@@ -19,13 +19,11 @@ spec:
                 port:
                   number: 80
 
-    - host: api.yourdomain.com
-      http:
-        paths:
-          - path: /
+          - path: /api(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: backend
                 port:
                   number: 4000
+
