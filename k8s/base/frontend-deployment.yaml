@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: app
 spec:
   replicas: 2
   selector:
@@ -12,9 +13,11 @@ spec:
       labels:
         app: frontend
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: frontend
-          image: app-frontend:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/YOUR_GITHUB/app-frontend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
