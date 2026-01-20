@@ -3,8 +3,6 @@ name: Build Frontend Image
 on:
   push:
     branches: [ main ]
-    paths:
-      - frontend/**
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}-frontend
+          images: ghcr.io/notemberg/app-frontend
           tags: |
             type=sha
             type=raw,value=latest

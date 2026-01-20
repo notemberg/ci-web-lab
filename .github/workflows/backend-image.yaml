@@ -3,8 +3,6 @@ name: Build Backend Image
 on:
   push:
     branches: [ main ]
-    paths:
-      - backend/**
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}-backend
+          images: ghcr.io/notemberg/app-backend
           tags: |
             type=sha
             type=raw,value=latest
