@@ -22,7 +22,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: backend
-          image: ghcr.io/notemberg/app-backend:latest
+          image: ghcr.io/notemberg/app-backend:__IMAGE_TAG__
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
