@@ -1,4 +1,4 @@
-name: Build & Deploy Backend
+name: Deploy Backend
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     permissions:
       contents: write
